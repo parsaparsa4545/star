@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Astronomy</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="link">home</a>
+        <a href="#" class="link">Description</a>
+        <a href="#" class="link">Stars</a>
+
+        <p class="por">Work with us to better understand the universe.
+            With your help, we gain better insights into the cosmos—so please support us.
+            Special thanks to the site developer, p-a.</p>
+    </nav>
+    <main>
+        <h1>welcome</h1>
+
+        <div class="er">
+            <div id="text"></div>
+            <img src="Keplers_supernova.jpg" alt="pxle" width="400px" class="img">
+
+        </div>
+        <hr>
+    </main>
+
+    <script>
+        const text = "Cosmic dust – also called extraterrestrial dust, space dust, or star dust – is dust that occurs in outer space or has fallen onto Earth.[1][2] Most cosmic dust particles measure between a few molecules and 0.1 mm (100 μm), such as micrometeoroids (<30 μm) and meteoroids (>30 μm).[3] Cosmic dust can be further distinguished by its astronomical location: intergalactic dust, interstellar dust, interplanetary dust (as in the zodiacal cloud), and circumplanetary dust (as in a planetary ring). Information on the nature of dust in locations beyond the Solar System is mostly obtained by methods of observational astronomy, such as photometry, polarimetry and infrared spectroscopy.[4] Direct methods are also available for the collection and study of space dust within the Solar System.[5] For example, the Stardust spacecraft collected cometary dust, and also detected some particles of probable interstellar origin, returning samples to Earth in 2006 Cosmic dust was once solely an annoyance to astronomers, as it obscures objects they wished to observe. When infrared astronomy began, the dust particles were observed to be significant and vital components of astrophysical processes. Their analysis can reveal information about phenomena like the formation of the Solar System.[19] For example, cosmic dust can drive the mass loss when a star is nearing the end of its life, play a part in the early stages of star formation, and form planets. In the Solar System, dust plays a major role in the zodiacal light, Saturn's B Ring spokes, the outer diffuse planetary rings at Jupiter, Saturn, Uranus and Neptune, and comets";
+        const el = document.getElementById("text");
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 5);
+            }
+        }
+        type();
+    </script>
+</body>
+
+</html>

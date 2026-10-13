@@ -1,0 +1,87 @@
+*{
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+body{
+    background-image: url(64b515d7f34f6.gif);
+    cursor: url('icons8-comet-50.png'), auto;
+}
+a, button {
+    cursor: url('icons8-comet-50.png') 16 16, pointer;
+}
+main{
+    margin: auto;
+    width: 1000px;
+    background-color: rgba(255, 255, 255, 0.278);
+    backdrop-filter: blur(2px);
+    height: 900px;
+}
+nav{
+    background-color: black;
+    border: solid #fff;
+    width: 200px;
+    position: fixed;
+    margin-left: 50px;
+    height: 90%;
+    margin-top: 25px;
+}
+.link{
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    justify-content: center;
+    margin: 10px;
+    border: #fff dashed;
+}
+@keyframes oo{
+    0%{
+        border: #fff dashed;
+    }
+    50%{
+        border: #fe0707 dashed;
+    }
+}
+.link:hover{
+    background-color: #ffffff4b;
+    animation: oo 1s infinite;
+}
+h1{
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.er{
+    display: flex;
+}
+.img{
+    border: solid 1px  white;
+    margin:5px;
+}
+#text{
+    font-size: 25px;
+    width: 700px;
+    background-color: #ffffff76;
+    margin: 5px;
+    overflow-y: scroll;
+    height: 400px;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(175, 175, 175) rgb(255, 255, 255);
+}
+.por{
+    color: #fff;
+    padding: 10px;
+    margin-top: 250px;
+}
+hr{
+    width: 90%;
+    text-align: center;
+}
