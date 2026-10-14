@@ -1,29 +1,42 @@
-*{
+* {
     font-family: "Special Elite", system-ui;
     font-weight: 400;
     font-style: normal;
     margin: 0;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 0;
 }
-body{
+
+html {
+    scrollbar-width: thin;
+    scroll-behavior: smooth;    
+}
+
+body {
     background-image: url(64b515d7f34f6.gif);
     cursor: url('icons8-comet-50.png'), auto;
+    height: 10000px;
+    
 }
-a, button {
-    cursor: url('icons8-comet-50.png') 16 16, pointer;
+
+a,
+button {
+    cursor: url('icons8-comet-50.png'), pointer;
 }
-main{
+
+main {
     margin: auto;
-    width: 1000px;
+    width: 65%;
     background-color: rgba(255, 255, 255, 0.278);
     backdrop-filter: blur(2px);
     height: 900px;
 }
-nav{
+
+nav {
     background-color: black;
     border: solid #fff;
     width: 200px;
@@ -32,7 +45,8 @@ nav{
     height: 90%;
     margin-top: 25px;
 }
-.link{
+
+.link {
     display: flex;
     padding: 10px;
     text-decoration: none;
@@ -41,32 +55,38 @@ nav{
     margin: 10px;
     border: #fff dashed;
 }
-@keyframes oo{
-    0%{
+
+@keyframes oo {
+    0% {
         border: #fff dashed;
     }
-    50%{
+
+    50% {
         border: #fe0707 dashed;
     }
 }
-.link:hover{
+
+.link:hover {
     background-color: #ffffff4b;
     animation: oo 1s infinite;
 }
-h1{
+
+h1 {
     text-align: center;
     background-color: #fff;
     padding: 20px;
 }
 
-.er{
+.er {
     display: flex;
 }
-.img{
-    border: solid 1px  white;
-    margin:5px;
+
+.img {
+    border: solid 1px white;
+    margin: 5px;
 }
-#text{
+
+#text {
     font-size: 25px;
     width: 700px;
     background-color: #ffffff76;
@@ -76,12 +96,96 @@ h1{
     scrollbar-width: thin;
     scrollbar-color: rgb(175, 175, 175) rgb(255, 255, 255);
 }
-.por{
+
+.por {
     color: #fff;
     padding: 10px;
     margin-top: 250px;
 }
-hr{
+
+h2 {
+    padding: 10px;
+}
+
+hr {
     width: 90%;
     text-align: center;
+}
+
+.tr {
+    text-align: center;
+    background-color: #fff;
+}
+
+@keyframes autoScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-500%);
+    }
+}
+
+.imgo {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+}
+
+
+.tr img {
+    object-fit: cover;
+    animation: autoScroll 15s linear infinite;
+    width: 300px;
+}
+
+.tr:hover .imgo img {
+    animation: autoScroll 100s linear infinite;
+}
+
+.meteor {
+    position: fixed;
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffffff76 60%, #6cf);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    filter: drop-shadow(0 0 6px #ffffff75) drop-shadow(0 0 12px #6cf);
+}
+
+.meteor::after {
+    content: "";
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.49);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px #ffffff7e, 0 0 16px rgb(39, 165, 227);
+}
+
+@keyframes fly {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(var(--rot));
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(60vw, 100vh) rotate(var(--rot));
+    }
 }

@@ -13,16 +13,16 @@
 
 <body>
     <nav>
-        <a href="#" class="link">home</a>
+        <a href="#home" script="void=(0)" class="link">home</a>
         <a href="#" class="link">Description</a>
-        <a href="#" class="link">Stars</a>
+        <a href="#foot" script="void=(0)" class="link">Stars</a>
 
         <p class="por">Work with us to better understand the universe.
             With your help, we gain better insights into the cosmos—so please support us.
             Special thanks to the site developer, p-a.</p>
     </nav>
     <main>
-        <h1>welcome</h1>
+        <h1 id="home">welcome</h1>
 
         <div class="er">
             <div id="text"></div>
@@ -30,7 +30,29 @@
 
         </div>
         <hr>
+        <div class="tr">
+            <h2>My favorite images</h2>
+            <div class="imgo">
+                <img src="NGC_4414_(NASA-med).jpg" alt="1">
+                <img src="Cosmic_shadow_of_HBC_672.jpg" alt="2">
+                <img src="M82_HST_ACS_2006-14-a-large_web.jpg" alt="3">
+                <img src="Artist's_impression_of_a_protocluster_forming_in_the_early_Universe.jpg" alt="4">
+                <img src="A_Multi-Wavelength_View_of_Radio_Galaxy_Hercules_A.jpg" alt="5">
+                <img src="NGC_4414_(NASA-med).jpg" alt="1">
+                <img src="Cosmic_shadow_of_HBC_672.jpg" alt="2">
+                <img src="M82_HST_ACS_2006-14-a-large_web.jpg" alt="3">
+                <img src="Artist's_impression_of_a_protocluster_forming_in_the_early_Universe.jpg" alt="4">
+                <img src="A_Multi-Wavelength_View_of_Radio_Galaxy_Hercules_A.jpg" alt="5">
+            </div>
+        </div>
+        <h1>Travel to space.</h1>
+
     </main>
+    <div style="min-height: 10000px;"></div>
+
+    <footer style="background-color: aliceblue;" id="foot">
+        fh
+    </footer>
 
     <script>
         const text = "Cosmic dust – also called extraterrestrial dust, space dust, or star dust – is dust that occurs in outer space or has fallen onto Earth.[1][2] Most cosmic dust particles measure between a few molecules and 0.1 mm (100 μm), such as micrometeoroids (<30 μm) and meteoroids (>30 μm).[3] Cosmic dust can be further distinguished by its astronomical location: intergalactic dust, interstellar dust, interplanetary dust (as in the zodiacal cloud), and circumplanetary dust (as in a planetary ring). Information on the nature of dust in locations beyond the Solar System is mostly obtained by methods of observational astronomy, such as photometry, polarimetry and infrared spectroscopy.[4] Direct methods are also available for the collection and study of space dust within the Solar System.[5] For example, the Stardust spacecraft collected cometary dust, and also detected some particles of probable interstellar origin, returning samples to Earth in 2006 Cosmic dust was once solely an annoyance to astronomers, as it obscures objects they wished to observe. When infrared astronomy began, the dust particles were observed to be significant and vital components of astrophysical processes. Their analysis can reveal information about phenomena like the formation of the Solar System.[19] For example, cosmic dust can drive the mass loss when a star is nearing the end of its life, play a part in the early stages of star formation, and form planets. In the Solar System, dust plays a major role in the zodiacal light, Saturn's B Ring spokes, the outer diffuse planetary rings at Jupiter, Saturn, Uranus and Neptune, and comets";
@@ -45,6 +67,42 @@
             }
         }
         type();
+
+
+
+
+        let lastY = 0;
+        let lastTime = 0;
+        const COOLDOWN = 1200;
+
+        window.addEventListener('scroll', () => {
+            const now = Date.now();
+            const y = window.scrollY;
+            const diff = Math.abs(y - lastY);
+            lastY = y;
+
+            if (diff > 10 && now - lastTime > COOLDOWN) {
+                lastTime = now;
+                spawnMeteor();
+            }
+        });
+
+        function spawnMeteor() {
+            const m = document.createElement('div');
+            m.className = 'meteor';
+
+            const rot = 40 + Math.random() * 10;
+            const dur = 0.9 + Math.random() * 1;
+            const startX = Math.random() * 40;
+
+            m.style.setProperty('--rot', rot + 'deg');
+            m.style.left = startX + 'vw';
+            m.style.top = '-5vh';
+            m.style.animation = `fly ${dur}s ease-out forwards`;
+
+            document.body.appendChild(m);
+            setTimeout(() => m.remove(), dur * 1000 + 100);
+        }
     </script>
 </body>
 
